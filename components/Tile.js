@@ -5,23 +5,30 @@ const TILE_SIZE = 50;
 
 export const Tile = ({ label }) => {
   return (
-    <View style={styles.tile}>
-      <Text style={styles.label}>{label}</Text>
-    </View>
+    <>
+      {label !== -1 ? (
+        <Text style={styles.label}>{label}</Text>
+      ) : (
+        <View style={styles.emptyTile}></View>
+      )}
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  tile: {
+  emptyTile: {
     height: TILE_SIZE,
     width: TILE_SIZE,
-    backgroundColor: "purple",
-    borderWidth: 1,
-    justifyContent: "center"
+    backgroundColor: "transparent"
   },
   label: {
     textAlign: "center",
+    textAlignVertical: "center",
     color: "white",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    height: TILE_SIZE,
+    width: TILE_SIZE,
+    backgroundColor: "purple",
+    borderWidth: 1
   }
 });
