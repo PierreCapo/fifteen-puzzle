@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
-
-const TILE_SIZE = 50;
+import { TILE_SIZE } from "./constants";
 
 export const Tile = ({ label }) => {
   return (
@@ -28,7 +27,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     height: TILE_SIZE,
     width: TILE_SIZE,
-    backgroundColor: "purple",
-    borderWidth: 1
+    backgroundColor: "#673ab7",
+    borderWidth: 1,
+    fontSize: 25
   }
 });
